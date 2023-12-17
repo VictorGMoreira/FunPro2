@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Bhaskara</title>
+    <script>
+        function calcularBhaskara() {
+            // Obter valores de a, b e c a partir do usuário
+            var a = parseFloat(prompt("Informe o valor de a:"));
+            var b = parseFloat(prompt("Informe o valor de b:"));
+            var c = parseFloat(prompt("Informe o valor de c:")); 
+
+            // Calcular Delta
+            var delta = b * b - 4 * a * c; 
+
+            // Exibir resultados na interface
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "Equação atual: " + a + "x² + " + b + "x + " + c + "<br>";
+            resultado.innerHTML += "Cálculo a ser realizado: Δ = b² - 4ac<br>";
+            resultado.innerHTML += "Valor de Δ (Delta): " + delta;
+        }
+    </script>
+</head>
+<body> 
+
+    <h1>Resolvendo Bhaskara</h1> 
+
+    <button onclick="calcularBhaskara()">Calcular</button> 
+
+    <div id="resultado"></div> 
+
+</body>
+</html>
