@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Desconto</title>
+</head>
+<body> 
+
+    <h2>Calcular Desconto</h2> 
+
+    <label for="productName">Nome do Produto:</label>
+    <input type="text" id="productName" placeholder="Digite o nome do produto"> 
+
+    <label for="productValue">Valor do Produto:</label>
+    <input type="number" id="productValue" placeholder="Digite o valor do produto"> 
+
+    <button onclick="calcularDesconto()">Desconto de 10%</button> 
+
+    <h3>Resultado:</h3>
+    <p id="originalPrice"></p>
+    <p id="discountAmount"></p>
+    <p id="finalPrice"></p> 
+
+    <script>
+        function calcularDesconto() {
+            var productName = document.getElementById("productName").value;
+            var productValue = parseFloat(document.getElementById("productValue").value); 
+
+            if (isNaN(productValue)) {
+                alert("Por favor, insira um valor válido para o produto.");
+                return;
+            } 
+
+            var discountPercentage = 0.1;
+            var discountAmount = productValue * discountPercentage;
+            var finalPrice = productValue - discountAmount; 
+
+            document.getElementById("originalPrice").innerText = "Preço Original: R$ " + productValue.toFixed(2);
+            document.getElementById("discountAmount").innerText = "Desconto de 10%: R$ " + discountAmount.toFixed(2);
+            document.getElementById("finalPrice").innerText = "Preço Final: R$ " + finalPrice.toFixed(2);
+        }
+    </script> 
+
+</body>
+</html>
